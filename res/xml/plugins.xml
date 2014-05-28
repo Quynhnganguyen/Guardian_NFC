@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cordova>
+<plugin 
+    xmlns="http://www.phonegap.com/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    id="com.chariotsolutions.nfc" 
+    version="0.4.2-SNAPSHOT">
+    
+    <name>NFC</name>
+    
+
+    <platform name="android">
+        
+        <source-file src="src/com/example/guardian_by_nfc/NfcPlugin.java"
+            target-dir="src/com/example/guardian_by_nfc/plugin"/>
+        <source-file src="src/com/example/buardian_by_nfc/Util.java" 
+            target-dir="src/com/example/guardian_by_nfc/"/>
+        
+    </platform>
+</plugin>
+</cordova>
