@@ -1,4 +1,4 @@
-$baseUrl = "http://192.168.0.138:3000";
+$baseUrl = "http://mighty-fortress-1212.herokuapp.com";
 
 //Nhung ham phu
 function setpr(key, value) {
