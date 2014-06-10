@@ -1,23 +1,29 @@
 package com.example.guardian_by_nfc;
 
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
+import android.os.Build;
 import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@TargetApi(Build.VERSION_CODES.GINGERBREAD_MR1)
+@SuppressLint("NewApi")
 public class Util {
 
     static final String TAG = "NfcPlugin";
 
-    static JSONObject ndefToJSON(Ndef ndef) {
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD_MR1)
+	@SuppressLint("NewApi")
+	static JSONObject ndefToJSON(Ndef ndef) {
         JSONObject json = new JSONObject();
 
         if (ndef != null) {
@@ -49,7 +55,8 @@ public class Util {
         return json;
     }
 
-    static JSONObject tagToJSON(Tag tag) {
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD_MR1)
+	static JSONObject tagToJSON(Tag tag) {
         JSONObject json = new JSONObject();
 
         if (tag != null) {
@@ -109,7 +116,8 @@ public class Util {
         return b;
     }
 
-    static JSONArray messageToJSON(NdefMessage message) {
+    @SuppressLint("NewApi")
+	static JSONArray messageToJSON(NdefMessage message) {
         if (message == null) {
             return null;
         }
@@ -123,7 +131,9 @@ public class Util {
         return new JSONArray(list);
     }
 
-    static JSONObject recordToJSON(NdefRecord record) {
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
+	@SuppressLint("NewApi")
+	static JSONObject recordToJSON(NdefRecord record) {
         JSONObject json = new JSONObject();
         try {
             json.put("tnf", record.getTnf());

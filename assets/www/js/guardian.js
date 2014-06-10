@@ -100,7 +100,7 @@ function show_entry(id_tag){
    var par1 = getpr("login");
 
   $.post($baseUrl + "/api/show_entry", {auth_token: par1, idtag: idtag}, function (response) {
-      if (response.message == 'success') {
+      if (response.message == 'succeeded') {
               var img = getElement("showimg");
                 img.src = $baseUrl + response.image;
               fillvalue("tagid", response.tag);
@@ -230,7 +230,7 @@ function check_entry(){
     console.log(response.message);
 
     //check if the authorization was successful or not
-    if (response.message == 'success') {
+    if (response.message == 'succeeded') {
             var img = getElement("showimg");
               img.src = $baseUrl + response.image;
             fillvalue("tagid", response.tag);
