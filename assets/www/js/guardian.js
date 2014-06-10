@@ -240,6 +240,7 @@ function check_entry(){
       alert(response.message);
       $.mobile.changePage( "#nfc",
                             {transition: "slide"} );
+      init();
       }
   });  
 }
