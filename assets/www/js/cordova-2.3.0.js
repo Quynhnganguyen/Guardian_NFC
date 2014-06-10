@@ -23,8 +23,6 @@
 
 ;(function() {
 
-// file: lib/scripts/require.js
-
 var require,
     define;
 

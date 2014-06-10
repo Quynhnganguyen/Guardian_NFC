@@ -28,7 +28,8 @@ function showInstructions() {
    
     document.getElementById("tagContents").innerHTML =
     "<div id='instructions'>" +
-    " <p align='center'>Hãy quét thẻ!<\/p>" +
+    // " <p align='center'>Hãy quét thẻ!<\/p>" +
+    " <p align='center'>Scan tag NFC!<\/p>" +
     " <p><\/p>" +    
     "<\/div>";
 }

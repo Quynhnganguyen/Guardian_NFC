@@ -35,18 +35,21 @@
         <!-- Đăng nhập -->
         <div data-role="page" data-theme="b" id="login_page" > 
             <div data-role="header" class="ui-header ui-bar-b" data-theme="b">
-                <h1 class="ui-title">Đăng nhập</h1>
+                <!-- <h1 class="ui-title">Đăng nhập</h1> -->
+                <h1 class="ui-title">Login</h1>
             </div>
             <div data-role="content">
                 <img src="css/images/splash.png" style="width: 285px; height: 230px;">
                     <form id="login" style="text-transform: none">
                         <label for="email">Email</label>
                         <input type="text" data-clear-btn="true" name="email" id="email" value="">
-                        <label for="password">Mật khẩu</label>
+                        <!-- <label for="password">Mật khẩu</label> -->
+                        <label for="password">Password</label>
                         <input type="password" data-clear-btn="true" name="password" id="password" value="">
                     </form>
                 <div style="padding-top: 20px; text-align: center;" >
-                    <a class='login_btn' onclick="login();" rel="external" data-role="button" data-inline="true" data-inline="true" data-mini="true" data-icon="check">Đăng nhập</a>
+                    <!-- <a class='login_btn' onclick="login();" rel="external" data-role="button" data-inline="true" data-inline="true" data-mini="true" data-icon="check">Đăng nhập</a> -->
+                    <a class='login_btn' onclick="login();" rel="external" data-role="button" data-inline="true" data-inline="true" data-mini="true" data-icon="check">Sign in</a>
                 </div>
             </div> 
         </div>
@@ -54,18 +57,25 @@
         <!-- -guardhome -->
         <div data-role="page" data-theme="b"  id="home_page">
              <div data-role="header"  data-theme="b">
-                <a href="" onclick="logout();"data-icon="back" data-theme="d" data-direction="reverse">Logout</a>
+                <a href="" onclick="logout();"data-icon="back" data-theme="d" data-direction="reverse">Sign out</a>
                 <h3 id="guardname"></h3>
              </div>
             
             <div data-role="content">        
                 <img src="css/images/homeimage.png" style="margin: 0px;">
-                <ul data-role="listview" class="ui-listview" style="padding: 30px 0px 30px 0px;">                   
+               <!--  <ul data-role="listview" class="ui-listview" style="padding: 30px 0px 30px 0px;">                   
                     <li data-theme="c"><a rel="external" onclick="list_entries_on();" href="#onlist">DS người trong tòa nhà</a></li>
                     <li data-theme="c"><a rel="external" onclick="list_entries_off();" href="#offlist">DS người đã rời tòa nhà</a></li>
                     <li data-theme="c"><a rel="external" id="open_camera_button">Cho phép người vào</a></li>
                     <li data-theme="c"><a rel="external" href="#nfc" onclick="init();" >Kiểm tra</a></li>
                     <li data-theme="c"><a rel="external" href="#nfc" onclick="init();">Cho phép người ra</a></li>
+                </ul> -->
+                 <ul data-role="listview" class="ui-listview" style="padding: 30px 0px 30px 0px;">                   
+                    <li data-theme="c"><a rel="external" onclick="list_entries_on();" href="#onlist">List of entry in the building</a></li>
+                    <li data-theme="c"><a rel="external" onclick="list_entries_off();" href="#offlist">List of entry getted out of the building</a></li>
+                    <li data-theme="c"><a rel="external" id="open_camera_button">Check in</a></li>
+                    <li data-theme="c"><a rel="external" href="#nfc" onclick="init();" >Entry verification</a></li>
+                    <li data-theme="c"><a rel="external" href="#nfc" onclick="init();">Check out</a></li>
                 </ul>
             </div><!--content-->
         </div><!--page-->
@@ -74,7 +84,9 @@
         <div data-role="page" id="onlist">
             <div data-role="header"  data-theme="b">
                 <a href="#home_page" data-icon="home" data-theme="d" data-direction="reverse">Home</a>
-                <h3>DS nguoi trong toa nha</h3>
+                <!-- <h3>DS nguoi trong toa nha</h3> -->
+                <h3>List of entry in the building</h3>
+
             </div>
     
             <div data-role="content">
@@ -89,7 +101,8 @@
         <div data-role="page" id="offlist">
            <div data-role="header"  data-theme="b">
                 <a href="#home_page" data-icon="home" data-theme="d" data-direction="reverse">Home</a>
-                <h3>Danh sach nguoi da roi toa nha</h3>
+                <!-- <h3>Danh sach nguoi da roi toa nha</h3> -->
+                <h3>List of entry getted out of the building</h3>
           </div>
     
             <div data-role="content">
@@ -112,19 +125,23 @@
                   <img id='showimg' src=""  style="float: middle; border: 2px black; width: 220px; height: 200px;"/>
                   <form id= "formshow">
                         <div data-role="fieldcontain">
-                            <label>Ma the</label>
+                            <!-- <label>Ma the</label> -->
+                            <label>Id NFC</label>
                             <input type="text" id="tagid" value= "" />
                         </div>
                         <div data-role="fieldcontain">
-                            <label>Thoi diem vao</label>
+                            <!-- <label>Thoi diem vao</label> -->
+                            <label>Check in at</label>
                             <input type="text" id="timein" value= "" />
                         </div>
                         <div data-role="fieldcontain">
-                            <label>Thoi diem ra</label>
+                            <!-- <label>Thoi diem ra</label> -->
+                            <label>Checkout at</label>
                             <input type="text" id="timeout" value= "" />
                         </div>
                         <div data-role="fieldcontain">
-                            <label>Ten bao ve</label>
+                            <!-- <label>Ten bao ve</label> -->
+                            <label>Guard name</label>
                             <input type="text" id="guard" value= "" />
                         </div>
                   </form>
@@ -137,11 +154,13 @@
         <div data-role="page" id="result_page" data-theme="b">
             <div data-role="header" data-theme="b" >
                 <a href="#home_page" data-icon="home" data-theme="d" data-direction="reverse">Home</a>
-                 <h3>Cho phep nguoi vao</h3>
+                 <h3>Check in</h3>
+                 <!-- <h3>Cho phep nguoi vao</h3> -->
             </div>
             <div data-role="content">
                 <img id="pic" src="" style="display: none; border: 2px black;" />
-                <a href="#nfc" onclick="init();" id="scan_tag" data-role="button" data-theme="b" data-mini="true">Quét thẻ</a>
+                <a href="#nfc" onclick="init();" id="scan_tag" data-role="button" data-theme="b" data-mini="true">Scan NFC</a>
+                <!-- <a href="#nfc" onclick="init();" id="scan_tag" data-role="button" data-theme="b" data-mini="true">Quét thẻ</a> -->
             </div>
         </div>
         
@@ -171,14 +190,16 @@
         <div data-role="page" id="check_in">
             <div data-role="header"  data-theme="b">
                 <a href="#home_page" data-theme="d" data-icon="home"  data-direction="reverse">Home</a>
-                <h3>Cho phep nguoi vao</h3>
+                <!-- <h3>Cho phep nguoi vao</h3> -->
+                <h3>Check in</h3>
             </div>
     
             <div data-role="content">
                 <img id="image" src="" name= "image"/>
               <form id="checkin">
                     <input type="hidden" data-clear-btn="true" name="entry[image]" id="entry[image]" value="">
-                    <label for="entry[tag]">Ma the</label>
+                    <label for="entry[tag]">Id NFC</label>
+                    <!-- <label for="entry[tag]">Ma the</label> -->
                      <input type="text" data-clear-btn="true" name="entry[tag]" id="entry[tag]" value="">
 
               </form>

@@ -34,7 +34,7 @@ function onLoad() {
     document.addEventListener("deviceready", onDeviceReady, false);
     
     settings = new Settings();
-    // Read and save cameraOptions from the "settings_form" elemen
+    // Read and save cameraOptions from the "settings_form" element
 }
 
 // Called when Cordova is fully loaded (and calling to Cordova functions has become safe)
@@ -120,19 +120,11 @@ function onCaptureSuccess(imageData) {
     var photo = getElement("pic");
     photo.style.display = "block";
     photo.src = imageData;
-    //"data:image/jpeg;base64,"
     $.mobile.changePage("#result_page", "slideup");
 }
 function cameraCallback(imageData) { 
-    var image = document.getElementById('myImage'); image.src = imageData; } 
-// camera.getPicture() callback function that provides an error message  
+    var image = document.getElementById('myImage'); image.src = imageData; }  
 function onCaptureError(message) { }
-
-// Reads customized camera options from the settings_form and saves them to the settings object (cameraOptions storage)
-
-
-// Applies camera options stored in the settings object to the settings_form and updates visible form elements accordingly.
-// Is to be used when the user changes the settings_form elements state but does not intend to "save" this changes
 
 
 // Retrieves the underlying HTML DOM element from the event fired on jQuery element 
